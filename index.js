@@ -32,7 +32,7 @@ exports.handler = async (event, context) => {
     let statusCode = 'SUCCESS';
     
     try{
-		  // Call API and log response
+		  //extract source bucket and object details from event
 		  bucket = event['Records'][0]['s3']['bucket']['name'];
 		  photo = event['Records'][0]['s3']['object']['key'];
 		  
@@ -69,5 +69,3 @@ exports.handler = async (event, context) => {
         statusCode
     };
 };
-
-
